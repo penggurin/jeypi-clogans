@@ -7,9 +7,10 @@
 
 /* ============================================================
    SUPABASE CONFIG
-   Credentials are loaded from config.js (gitignored).
-   See config.example.js for the template.
    ============================================================ */
+
+const SUPABASE_URL = 'https://lmwezuluygeykqkrivoc.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxtd2V6dWx1eWdleWtxa3Jpdm9jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEwODMxMDUsImV4cCI6MjEwNjY1OTEwNX0.-boKZ9MY4uO63KmQQQRZ-SPjhF5y3qtl66nWWE25k28';
 
 const { createClient } = supabase;
 const db = createClient(SUPABASE_URL, SUPABASE_KEY);
