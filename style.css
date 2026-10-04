@@ -1,0 +1,894 @@
+/* ============================================================
+   Jeypi Silogan — BPM System Stylesheet
+   Colors: Yellow #F5C842 | Green #1a6b1a | Red #C0141A
+           Orange #F97316 | Cream #FDF6EC
+   ============================================================ */
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #FDF6EC;
+  color: #1f1f1f;
+  min-height: 100vh;
+}
+
+/* ── Typography ── */
+.font-brand   { font-family: 'Fredoka One', cursive; }
+.font-script  { font-family: 'Pacifico', cursive; }
+
+/* ── Layout ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 24px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .main-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  background: #ffffff;
+  border-bottom: 3px solid #F5C842;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.site-header .logo {
+  height: 80px;
+  width: auto;
+}
+
+.site-header .header-text h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  color: #C0141A;
+  line-height: 1.2;
+}
+
+.site-header .header-text p {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   SECTION PANELS
+   ============================================================ */
+.panel {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1.5px solid #e8e0d0;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.panel + .panel { margin-top: 20px; }
+
+.panel-head {
+  background: #C0141A;
+  color: #ffffff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+}
+
+.panel-head.green  { background: #1a6b1a; }
+.panel-head.yellow { background: #F5C842; color: #1f1f1f; }
+
+.panel-body { padding: 16px; }
+
+/* ============================================================
+   MENU ITEMS
+   ============================================================ */
+.menu-section-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 12px 0 8px;
+}
+
+.menu-section-label:first-child { margin-top: 0; }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #f0e8d8;
+  background: #fdfaf4;
+  margin-bottom: 8px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.menu-item:last-child { margin-bottom: 0; }
+
+.menu-item:hover { border-color: #F5C842; background: #fffbee; }
+
+.menu-item-info { display: flex; align-items: center; gap: 10px; }
+
+.menu-item-icon {
+  width: 36px; height: 36px;
+  background: #FDF6EC;
+  border: 1.5px solid #F5C842;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: #C0141A;
+  flex-shrink: 0;
+}
+
+.menu-item-icon svg { width: 18px; height: 18px; }
+
+.menu-item-name {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.95rem;
+  color: #1f1f1f;
+}
+
+.menu-item-price {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 1px;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-btn {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.1s, opacity 0.1s;
+  line-height: 1;
+}
+
+.qty-btn:active { transform: scale(0.88); }
+
+.qty-minus { background: #fee2e2; color: #C0141A; }
+.qty-minus:hover { background: #fecaca; }
+
+.qty-plus  { background: #dcfce7; color: #1a6b1a; }
+.qty-plus:hover  { background: #bbf7d0; }
+
+.qty-value {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  color: #1f1f1f;
+  width: 20px;
+  text-align: center;
+}
+
+/* ============================================================
+   CART / RESIBO
+   ============================================================ */
+.cart-empty {
+  text-align: center;
+  padding: 20px 0 8px;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.cart-empty svg { margin: 0 auto 8px; opacity: 0.4; }
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px dashed #f0e8d8;
+  font-size: 0.88rem;
+  color: #444;
+}
+
+.cart-row:last-of-type { border-bottom: none; }
+
+.cart-row .item-name { font-weight: 700; }
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #1f1f1f;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.cart-total-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  color: #1f1f1f;
+}
+
+.cart-total-amount {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.3rem;
+  color: #C0141A;
+}
+
+/* ============================================================
+   ORDER FORM
+   ============================================================ */
+.form-label {
+  display: block;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  width: 100%;
+  border: 1.5px solid #e0d8c8;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  background: #fdfaf4;
+  outline: none;
+  transition: border-color 0.2s;
+  color: #1f1f1f;
+}
+
+.form-input:focus { border-color: #1a6b1a; }
+
+.form-error {
+  display: none;
+  font-size: 0.82rem;
+  color: #C0141A;
+  font-weight: 700;
+  margin: 6px 0 0;
+}
+
+.form-error.visible { display: block; }
+
+.btn-place-order {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  background: #C0141A;
+  color: #ffffff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 3px 0 #8b0e12;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-place-order:hover  { transform: translateY(-2px); box-shadow: 0 5px 0 #8b0e12; }
+.btn-place-order:active { transform: translateY(2px);  box-shadow: 0 1px 0 #8b0e12; }
+
+/* ============================================================
+   STAFF PANEL HEADER
+   ============================================================ */
+.staff-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.staff-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  color: #1a6b1a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.staff-title svg { color: #1a6b1a; }
+
+.btn-clear {
+  background: none;
+  border: 1.5px solid #d1d5db;
+  color: #6b7280;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-clear:hover { border-color: #C0141A; color: #C0141A; }
+
+/* ============================================================
+   ORDER CARDS
+   ============================================================ */
+.orders-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #ccc;
+}
+
+.orders-empty svg { margin: 0 auto 12px; opacity: 0.3; }
+
+.orders-empty p {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: #bbb;
+}
+
+.order-card {
+  background: #ffffff;
+  border: 1.5px solid #e8e0d0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  animation: slideIn 0.25s ease-out;
+}
+
+.order-card:last-child { margin-bottom: 0; }
+
+.order-card.is-completed { border-color: #1a6b1a; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Card top bar */
+.order-card-bar {
+  background: #1f1f1f;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-card-bar.is-completed { background: #1a6b1a; }
+
+.order-number {
+  background: #F5C842;
+  color: #1f1f1f;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.order-customer {
+  font-family: 'Fredoka One', cursive;
+  color: #ffffff;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.order-time {
+  font-size: 0.7rem;
+  color: #999;
+  white-space: nowrap;
+}
+
+/* Card body */
+.order-card-body { padding: 14px; }
+
+.order-items {
+  border-bottom: 1px dashed #f0e8d8;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #555;
+  padding: 2px 0;
+}
+
+.order-item-row span:last-child { font-weight: 700; color: #1f1f1f; }
+
+.order-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.order-total-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.order-total-amount {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2rem;
+  color: #C0141A;
+}
+
+/* Payment badges */
+.pay-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.pay-badge svg { width: 12px; height: 12px; }
+
+.pay-badge.unpaid { background: #fee2e2; color: #C0141A; border: 1px solid #fecaca; }
+.pay-badge.paid   { background: #dcfce7; color: #1a6b1a; border: 1px solid #bbf7d0; }
+
+/* ============================================================
+   PROGRESS TRACKER
+   ============================================================ */
+.progress-wrap {
+  margin: 12px 0;
+}
+
+.progress-steps {
+  display: flex;
+  align-items: center;
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.step-circle {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  background: #f5f5f5;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #ccc;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.step-circle svg { width: 12px; height: 12px; }
+
+.step-circle.done {
+  background: #C0141A;
+  border-color: #C0141A;
+  color: #fff;
+}
+
+.step-circle.active {
+  background: #F5C842;
+  border-color: #F97316;
+  color: #7a3800;
+  animation: pulse-ring 1.4s infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(249,115,22,0.45); }
+  70%  { box-shadow: 0 0 0 6px rgba(249,115,22,0); }
+  100% { box-shadow: 0 0 0 0 rgba(249,115,22,0); }
+}
+
+.step-label {
+  font-size: 0.55rem;
+  color: #aaa;
+  text-align: center;
+  max-width: 52px;
+  line-height: 1.2;
+}
+
+.step-label.done   { color: #C0141A; }
+.step-label.active { color: #F97316; font-weight: 700; }
+
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background: #e0e0e0;
+  margin-bottom: 16px;
+  transition: background 0.3s;
+  min-width: 8px;
+}
+
+.step-connector.done { background: #C0141A; }
+
+/* ============================================================
+   ACTION BUTTONS
+   ============================================================ */
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-pay {
+  background: #1a6b1a;
+  color: #fff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  box-shadow: 0 2px 0 #0f3d0f;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-pay:hover  { transform: translateY(-1px); box-shadow: 0 4px 0 #0f3d0f; }
+.btn-pay:active { transform: translateY(1px);  box-shadow: 0 0px 0 #0f3d0f; }
+
+.btn-next {
+  background: #F97316;
+  color: #fff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  box-shadow: 0 2px 0 #b45309;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-next:hover  { transform: translateY(-1px); box-shadow: 0 4px 0 #b45309; }
+.btn-next:active { transform: translateY(1px);  box-shadow: 0 0px 0 #b45309; }
+
+.btn-pay svg, .btn-next svg { width: 14px; height: 14px; }
+
+/* ── Delete / Cancel button ── */
+.btn-delete {
+  background: none;
+  color: #C0141A;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border: 1.5px solid #fecaca;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn-delete:hover { background: #fee2e2; border-color: #C0141A; }
+
+/* ── Undo button ── */
+.btn-undo {
+  background: none;
+  color: #6b7280;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn-undo:hover { background: #f3f4f6; border-color: #9ca3af; color: #374151; }
+
+/* ── Toast warning / error variants ── */
+#toast.toast-warn  { background: #b45309; }
+#toast.toast-error { background: #C0141A; }
+
+/* ── Loading overlay ── */
+#loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(253, 246, 236, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+.loading-spinner {
+  width: 38px;
+  height: 38px;
+  border: 4px solid #e8e0d0;
+  border-top-color: #C0141A;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   SUMMARY TABLE SECTION
+   ============================================================ */
+.summary-section {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.summary-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  color: #1a6b1a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-download {
+  background: #1a6b1a;
+  color: #fff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 7px;
+  box-shadow: 0 2px 0 #0f3d0f;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn-download:hover  { transform: translateY(-1px); box-shadow: 0 4px 0 #0f3d0f; }
+.btn-download:active { transform: translateY(1px);  box-shadow: 0 0 0 #0f3d0f; }
+.btn-download svg    { width: 14px; height: 14px; }
+
+/* Stats row */
+.summary-stats {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1.5px solid #e8e0d0;
+  border-radius: 10px;
+  padding: 10px 18px;
+  flex: 1;
+  min-width: 120px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.stat-card .stat-label {
+  font-size: 0.72rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Fredoka One', cursive;
+}
+
+.stat-card .stat-value {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2rem;
+  color: #1f1f1f;
+  margin-top: 2px;
+}
+
+.stat-card .stat-value.red   { color: #C0141A; }
+.stat-card .stat-value.green { color: #1a6b1a; }
+.stat-card .stat-value.amber { color: #b45309; }
+
+/* Table */
+.summary-table-wrap {
+  background: #fff;
+  border: 1.5px solid #e8e0d0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+}
+
+.summary-table thead tr {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.summary-table thead th {
+  font-family: 'Fredoka One', cursive;
+  font-weight: 400;
+  padding: 10px 14px;
+  text-align: left;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.summary-table tbody tr {
+  border-bottom: 1px solid #f0e8d8;
+  transition: background 0.12s;
+}
+
+.summary-table tbody tr:last-child { border-bottom: none; }
+.summary-table tbody tr:hover      { background: #fffbee; }
+
+.summary-table td {
+  padding: 9px 14px;
+  color: #444;
+  vertical-align: middle;
+}
+
+.summary-table td:first-child {
+  font-family: 'Fredoka One', cursive;
+  color: #1f1f1f;
+}
+
+/* Status pills in table */
+.status-pill {
+  display: inline-block;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.72rem;
+  padding: 2px 9px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.status-pill.completed  { background: #dcfce7; color: #1a6b1a; }
+.status-pill.unpaid     { background: #fee2e2; color: #C0141A; }
+.status-pill.inprogress { background: #fef3c7; color: #b45309; }
+
+/* ============================================================
+   FINAL RECEIPT
+   ============================================================ */
+.receipt-block {
+  margin-top: 14px;
+  border: 1.5px solid #1a6b1a;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+}
+
+.receipt-header {
+  background: #1a6b1a;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.receipt-header span {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.receipt-body {
+  padding: 12px 14px;
+  background: #f9fef9;
+  font-size: 0.82rem;
+  font-family: 'Courier New', monospace;
+  color: #333;
+}
+
+.receipt-brand-line {
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  color: #C0141A;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.receipt-divider {
+  border: none;
+  border-top: 1px dashed #ccc;
+  margin: 6px 0;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 0;
+}
+
+.receipt-row.bold { font-weight: 800; color: #1f1f1f; }
+
+.receipt-thanks {
+  text-align: center;
+  margin-top: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  color: #1a6b1a;
+  font-weight: 700;
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+#toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: #1f1f1f;
+  color: #ffffff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.9rem;
+  padding: 10px 24px;
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.72rem;
+  color: #bbb;
+  border-top: 1px solid #f0e8d8;
+}
+
+.site-footer strong { color: #C0141A; font-family: 'Fredoka One', cursive; }
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f5f0e8; }
+::-webkit-scrollbar-thumb { background: #F5C842; border-radius: 4px; }
